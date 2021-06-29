@@ -13,4 +13,4 @@ class MyClient(discord.Client):
         misc_functions.test_for_ping(message)
 
 client = MyClient()
-client.run('my token goes here')
+client.run('ODU5MjQ5NDc1NDMyMjE4NjM0.YNp8bw.spiM7SKAPD7Bd3SJl9meVl0tadg')
