@@ -1,7 +1,11 @@
 from utils import misc_functions
 
-
+import os
 import discord
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -13,4 +17,4 @@ class MyClient(discord.Client):
         misc_functions.test_for_ping(message)
 
 client = MyClient()
-client.run('ODU5MjQ5NDc1NDMyMjE4NjM0.YNp8bw.spiM7SKAPD7Bd3SJl9meVl0tadg')
+client.run(TOKEN)
