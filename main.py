@@ -14,7 +14,11 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         print('Message from {0.author}: {0.content}'.format(message))
         
-        misc_functions.test_for_ping(message)
+        await misc_functions.test_for_ping(message)
+        
+    async def on_member_join(member):
+        print("In function")
+        await misc_functions.greet_member(member)
 
 client = MyClient()
 client.run(TOKEN)
