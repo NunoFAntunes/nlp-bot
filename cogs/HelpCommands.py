@@ -10,7 +10,7 @@ class HelpCommands(commands.Cog):
        
     @helpcommand.command(name='ping') 
     async def ping_help(self, ctx):
-        await ctx.channel.send("Checks if the man is working or being lazy.")
+        await ctx.channel.send("Checks if it's being Smort or not.")
         
 def setup(bot):
     bot.add_cog(HelpCommands(bot))
