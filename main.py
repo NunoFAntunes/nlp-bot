@@ -27,7 +27,8 @@ def get_prefix(bot, message):
 initial_extensions = ['cogs.Administration',
                       'cogs.CommandEvents',
                       'cogs.HelpCommands',
-                      'cogs.MiscCommands']
+                      'cogs.MiscCommands',
+                      'cogs.GoogleCommands']
 
 bot = commands.Bot(command_prefix=get_prefix, description='SmortBot')
 
