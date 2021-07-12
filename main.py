@@ -61,4 +61,4 @@ async def on_ready():
 #        await misc_functions.greet_member(member)
 
 
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run(TOKEN, reconnect=True)
