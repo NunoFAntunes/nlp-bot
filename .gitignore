@@ -4,3 +4,4 @@ nlp-bot/*
 cogs/__pycache__/*
 algorithms/time_functions/__pycache__/*
 cogs/__pycache__/*
+algorithms/google_functions/__pycache__/*
