@@ -69,7 +69,15 @@ class MiscCommands(commands.Cog):
         await ctx.message.add_reaction("🕒")
         await ctx.channel.send('Starting a %s Seconds Timer.' % str(seconds))
         await self.countdown_recursive(ctx, seconds, timer_type)
-        # await self.countdown_recursive(ctx, seconds, timer_type)
+        
+    @commands.command(name='chat')
+    async def chat(self, ctx, *text):
+        await ctx.channel.send('Hello my friend!')
+        def check(m):
+            return m.content == 'How are you' and m.channel == ctx.channel
+
+        msg = await self.bot.wait_for('message', check=check)
+        await ctx.channel.send('Doing good {.author}! How about you?'.format(msg))
                     
 def setup(bot):
     bot.add_cog(MiscCommands(bot))
