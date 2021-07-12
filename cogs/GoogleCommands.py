@@ -1,7 +1,9 @@
 from googleapi import google
 from googleapi import google, images
 
+import discord
 from discord.ext import commands
+from algorithms.google_functions import youtube_call
 
 class GoogleCommands(commands.Cog):
     def __init__(self, bot):
@@ -34,6 +36,13 @@ class GoogleCommands(commands.Cog):
     async def convert_command(self, ctx, input_query):
         euros = google.convert_currency(5.0, "USD", "EUR")
         await ctx.channel.send("5.0 USD = {0} EUR".format(euros))
+        
+    @commands.command(name='youtube', aliases=['yt'])
+    async def youtube_search(self, ctx, *input_query):
+        query = ' '.join(word for word in input_query)
+        search_results = youtube_call.search(query)
+        beginning_link="https://www.youtube.com/watch?v="
+        await ctx.channel.send(beginning_link + search_results[0])
      
        
 def setup(bot):
