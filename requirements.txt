@@ -5,7 +5,7 @@ beautifulsoup4==4.9.3
 cachetools==4.2.2
 certifi==2021.5.30
 chardet==4.0.0
-discord.py==2.0.0a3391+gf14e5843
+git+https://github.com/Rapptz/discord.py@master
 fake-useragent==0.1.11
 future==0.18.2
 google-api-core==1.30.0
