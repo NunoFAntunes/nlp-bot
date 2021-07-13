@@ -23,12 +23,12 @@ class MiscCommands(commands.Cog):
     @commands.command(name='roll', aliases=['rolldice'])
     async def roll_dice_command(self, ctx, *args):
         script_dir = os.path.join(os.path.dirname(__file__), os.pardir)
-        rel_path = "assets\\images\\dice"
+        rel_path = os.path.join(script_dir, "assets", "images", "dice")
         if not args:
             rolled_number = str(randrange(6)+1)
-            await ctx.channel.send(file=discord.File(os.path.join(script_dir, rel_path, "die_face_%s.png" % rolled_number)))
+            await ctx.channel.send(file=discord.File(os.path.join(rel_path, "die_face_%s.png" % rolled_number)))
         else:
-            await ctx.channel.send(file=discord.File(os.path.join(script_dir, rel_path, "roll.gif")))
+            await ctx.channel.send(file=discord.File(os.path.join(rel_path, "roll.gif")))
             if len(args) > 1:
                 await ctx.channel.send("Too many arguments passed. Only the first was taken into consideration")
             try:
